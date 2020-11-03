@@ -1,0 +1,512 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset=utf-8"UTF-8" />
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta http-equiv="Content-Language" content="zh-CN" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<title>ZBlog导入数据库提示unknown character set 'utf8mb4'的原因及解决方案 | 烽烟博客</title>
+	<meta name="keywords" content="ZBlog导入,utf8mb4,虚拟机" />
+	<meta name="description"
+		content="今天往阿里云的一个虚拟机里导入数据库，结果提示unknown character set &#39;utf8mb4&#39;。这个错误是因为阿里虚拟机的数据库版本是5.1的，不支持utf8mb4字符集，utf8mb4字符集从5.5开始采用的，所以导入失败。这个问题解决起..." />
+	<link rel="stylesheet" rev="stylesheet" href="zb_users/theme/FY_CIYAW/style/style.css" type="text/css"
+		media="all" />
+	<link rel="stylesheet" href="zb_users/theme/FY_CIYAW/style/font-awesome-4.3.0/css/font-awesome.min.css"
+		media="screen" type="text/css" />
+	<script src="zb_system/script/jquery-2.2.4.min.js" type="text/javascript"></script>
+	<script src="zb_system/script/zblogphp.js" type="text/javascript"></script>
+	<script src="zb_system/script/c_html_js_add.php" type="text/javascript"></script>
+	<script src="zb_users/theme/FY_CIYAW/style/js/com.js"></script>
+	<style>
+		.grid-weibo-show header {
+			background: url("zb_users/upload/2016/02/201602111455160910856280.jpg")
+				/*tpa=https://www.fengyan.cc/zb_users/upload/2016/02/201602111455160910856280.jpg*/
+				bottom center no-repeat;
+		}
+	</style>
+
+	<style type="text/css">
+	
+	</style>
+	<style></style>
+	<link rel="miphtml" href="https://www.fengyan.cc/mip/1414.html" />
+	<style>
+		.divContorPanel div {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body> -->
+
+	<%- include("./public/header.html")%>
+	<%- include("./public/headerNav.html")%>
+	<div class="breadcrumb">
+
+
+		<i class="fa fa-home"></i> <a href="index.htm" title="烽烟博客">首页</a>
+		&raquo; <a
+			href="javascript:if(confirm('https://www.fengyan.cc/z-blog  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.fengyan.cc/z-blog'"
+			title="查看Z-Blog建站中的全部文章">Z-Blog建站</a> &raquo; <a
+			href="javascript:if(confirm('https://www.fengyan.cc/zblog-course  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.fengyan.cc/zblog-course'"
+			title="查看Z-Blog教程中的全部文章">Z-Blog教程</a> &raquo; 正文
+
+
+	</div>
+
+
+
+
+
+
+	<div class="container">
+		<div class="content-wrap">
+			<div class="content">
+
+
+				<div class="article-container animation">
+					<header class="article-header">
+						<h1 class="article-title"><%=result.title%></h1>
+
+						<div class="article-meta">
+
+							<span><i class="fa fa-clock-o fa-fw"></i> <%=result.addTime%></span>
+
+							<span><i class="fa fa-eye fa-fw"></i>2701 views</span>
+
+							<span><i class="fa fa-comment-o fa-fw"></i><a href="1414.html#comments">3</a></span>
+						</div>
+
+					</header>
+					<article class="article-content">
+						<%=result.description%>
+						<%-result.content%>
+					</article>
+
+					<footer class="entry-meta">
+						<p class="post-tag">标签：<a
+								href="javascript:if(confirm('https://www.fengyan.cc/tag/ZBlog%E5%AF%BC%E5%85%A5  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.fengyan.cc/tag/ZBlog%E5%AF%BC%E5%85%A5'"
+								rel="tag">ZBlog导入</a><a
+								href="javascript:if(confirm('https://www.fengyan.cc/tag/utf8mb4  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.fengyan.cc/tag/utf8mb4'"
+								rel="tag">utf8mb4</a><a
+								href="javascript:if(confirm('https://www.fengyan.cc/tag/%E8%99%9A%E6%8B%9F%E6%9C%BA  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.fengyan.cc/tag/%E8%99%9A%E6%8B%9F%E6%9C%BA'"
+								rel="tag">虚拟机</a></p>
+					</footer>
+				</div>
+
+				<div id="author-box" class="animation">
+					<h3><span>最后编辑于：2018/08/23</span>作者： 烽烟无限</h3>
+					<div class="author-info">
+						<div class="author-avatar">
+							<img src="../cdn.v2ex.com/gravatar/9b1965b1d4612fad53b695c38128c57e.png-s=60&r=G"
+								class="avatar avatar-128" height="128" width="128">
+						</div>
+						<div class="author-description">
+							<p>学习建站技术,分享建站技术,折腾Z-Blog,折腾WordPress</p>
+							<ul class="author-social follows nb">
+								<li class="archive">
+									<a target="_blank"
+										href="javascript:if(confirm('https://www.fengyan.cc/author/1  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.fengyan.cc/author/1'"
+										title="阅读 烽烟无限 的其他文章">阅读 烽烟无限 的其他文章</a>
+								</li>
+								<li class="website">
+									<a target="_blank" rel="nofollow" href="index.htm" title="访问 烽烟无限 的网站">访问 烽烟无限
+										的网站</a>
+								</li>
+								<li class="qq">
+									<a target="_blank" rel="nofollow"
+										href="javascript:if(confirm('http://wpa.qq.com/msgrd?v=3&uin=744355891&site=qq&menu=yes  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://wpa.qq.com/msgrd?v=3&uin=744355891&site=qq&menu=yes'"
+										title="通过QQ联系 烽烟无限">通过QQ联系 烽烟无限</a>
+								</li>
+								<li class="email">
+									<a target="_blank" rel="nofollow"
+										href="javascript:if(confirm('http://jq.qq.com/?_wv=1027&k=2IzKB19  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://jq.qq.com/?_wv=1027&k=2IzKB19'"
+										title="加入 烽烟无限 的QQ群">加入 烽烟无限 的QQ群</a>
+								</li>
+							</ul>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+
+				<div class="post-navigation animation">
+					<div class="post-previous"><a
+							href="javascript:if(confirm('https://www.fengyan.cc/1413.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.fengyan.cc/1413.html'"
+							rel="prev"><span>上一篇：</span> VMWare安装苹果Mac OS系统详细教程</a></div>
+					<div class="post-next"><a href="1415.html" rel="next"><span>下一篇：</span>
+							PHP开启openssl的方法-解决ZBlog主题插件无法启用的问题</a></div>
+				</div>
+
+
+				<div class="relates animation">
+					<div class="title">
+						<h3>相关推荐</h3>
+					</div>
+					<ul>
+
+
+						<li><a href="1415.html">PHP开启openssl的方法-解决ZBlog主题插件无法启用的问题</a><time>2018年08月23日</time></li>
+						<li><a href="1414.html">ZBlog导入数据库提示unknown character set
+								'utf8mb4'的原因及解决方案</a><time>2018年08月23日</time></li>
+						<li><a
+								href="javascript:if(confirm('https://www.fengyan.cc/1408.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.fengyan.cc/1408.html'">ZBlog
+								MIP主题开发指南</a><time>2018年05月07日</time></li>
+						<li><a
+								href="javascript:if(confirm('https://www.fengyan.cc/1400.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.fengyan.cc/1400.html'">ZBlog固定网站域名导致网站打不开的解决办法</a><time>2017年10月20日</time>
+						</li>
+						<li><a
+								href="javascript:if(confirm('https://www.fengyan.cc/1381.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.fengyan.cc/1381.html'">ZBlog常见错误的原因及解决方案</a><time>2017年04月04日</time>
+						</li>
+						<li><a
+								href="javascript:if(confirm('https://www.fengyan.cc/1380.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.fengyan.cc/1380.html'">ZBlog提示JavaScript加载失败</a><time>2017年04月04日</time>
+						</li>
+
+					</ul>
+				</div>
+				<div id="comments" class="mkcomments animation">
+					<div class="title">
+						<h3>发表评论</h3>
+					</div>
+
+					<label id="AjaxCommentBegin"></label>
+
+					<ul class="msg">
+
+						<label id="cmt1406"></label>
+						<li class="msgname" id="cmt-1406">
+							<div class="msgarticle">
+								<div class="avatar">
+									<img src="../cdn.v2ex.com/gravatar/487f87505f619bf9ea08f26bb34f8118.png-s=60&r=G" />
+								</div>
+								<div class="comment-body">
+									<div class="comment-header">
+										<a href="javascript:if(confirm('http://123/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://123/'"
+											rel="nofollow" target="_blank">123</a>
+									</div>
+									<p>不错<label id="AjaxComment1406"></label></p>
+									<div class="comment-footer">
+										<span class="comment-time" title="2019-10-15 15:18:29">2019-10-15
+											15:18:29</span>
+										<a class="post-reply" href="#comment" onclick="RevertComment('1406')">回复该评论</a>
+									</div>
+								</div>
+							</div>
+						</li>
+
+
+						<label id="cmt1207"></label>
+						<li class="msgname" id="cmt-1207">
+							<div class="msgarticle">
+								<div class="avatar">
+									<img src="../cdn.v2ex.com/gravatar/b9f1877f95d9567e1372273226d19831.png-s=60&r=G" />
+								</div>
+								<div class="comment-body">
+									<div class="comment-header">
+										<a href="javascript:if(confirm('https://www.houfli.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.houfli.com/'"
+											rel="nofollow" target="_blank">ACG资源</a>
+									</div>
+									<p>专业的哈！！<label id="AjaxComment1207"></label></p>
+									<div class="comment-footer">
+										<span class="comment-time" title="2018-09-04 09:34:35">2018-09-04
+											09:34:35</span>
+										<a class="post-reply" href="#comment" onclick="RevertComment('1207')">回复该评论</a>
+									</div>
+								</div>
+							</div>
+						</li>
+
+
+						<label id="cmt1200"></label>
+						<li class="msgname" id="cmt-1200">
+							<div class="msgarticle">
+								<div class="avatar">
+									<img src="../cdn.v2ex.com/gravatar/c178ba864de566bd4d593c59ca6c055c.png-s=60&r=G" />
+								</div>
+								<div class="comment-body">
+									<div class="comment-header">
+										<a href="" rel="nofollow" target="_blank">画册印刷</a>
+									</div>
+									<p>找了很久，原来是这个原因。<label id="AjaxComment1200"></label></p>
+									<div class="comment-footer">
+										<span class="comment-time" title="2018-08-27 11:20:49">2018-08-27
+											11:20:49</span>
+										<a class="post-reply" href="#comment" onclick="RevertComment('1200')">回复该评论</a>
+									</div>
+								</div>
+							</div>
+						</li>
+
+					</ul>
+
+
+
+					<label id="AjaxCommentEnd"></label>
+
+
+
+					<div class="post-Comment" id="divCommentPost">
+						<p class="posttop">
+							<a rel="nofollow" id="cancel-reply" href="#divCommentPost"
+								style="display:none;"><small>取消回复</small></a>
+							<a name="comment"></a>
+						</p>
+						<form id="frmSumbit" target="_self" method="post"
+							action="https://www.fengyan.cc/zb_system/cmd.php?act=cmt&postid=1414&key=00a7ae6896070b9577aacc2fab0bc1ff">
+							<div class="pinglun">
+								<p class="textarea-wrapper rounded-top">
+									<textarea name="txaArticle" id="txaArticle" class="text" cols="50" rows="4"
+										tabindex="5"></textarea>
+								</p>
+								<p class="post-toolbar">
+									<input name="sumbit" type="submit" tabindex="6" value="提交"
+										onclick="return VerifyMessage()" class="button" />
+								</p>
+							</div>
+							<input type="hidden" name="inpId" id="inpId" value="1414" />
+							<input type="hidden" name="inpRevID" id="inpRevID" value="0" />
+							<div class="post-terinfo">
+
+								<ul>
+									<li><input type="text" name="inpName" id="inpName" class="text" value=""
+											placeholder="您的昵称" size="28" tabindex="1" /></li>
+									<li><input type="text" name="inpEmail" id="inpEmail" class="text" value=""
+											placeholder="您的邮箱" size="28" tabindex="2" /></li>
+									<li><input type="text" name="inpHomePage" id="inpHomePage" class="text" value=""
+											placeholder="您的网站" onfocus="this.value='http://';" size="28" tabindex="3" />
+									</li>
+								</ul>
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sidebar">
+
+
+
+			<%- include("./login.html")%>
+
+
+
+
+			<div class="widget widget-tie zfbhb">
+
+
+				<ul>
+					<li><a href="javascript:if(confirm('https://www.aliyun.com/acts/hi-group-buying?userCode=o1hycxoa  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.aliyun.com/acts/hi-group-buying?userCode=o1hycxoa'"
+							title="首次购买高性能云产品，享低至2折优惠" rel="bookmark"><img
+								src="zb_users/upload/2019/06/20190614091542156047494228219.jpg" /></a></li>
+				</ul>
+
+
+			</div>
+
+
+
+
+
+			<div class="widget widget-tie widget_fronts">
+
+				<h3>服务项目</h3>
+
+
+				<ul>
+					<li class="ebox-i ebox-01">
+						<h4>网站建设</h4>
+						<p>为企业品牌官网提供解决方案</p> <a class="btn btn-default btn-sm" rel="nofollow" target="_blank"
+							href="javascript:if(confirm('http://wpa.qq.com/msgrd?v=3&uin=744355891&site=qq&menu=yes  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://wpa.qq.com/msgrd?v=3&uin=744355891&site=qq&menu=yes'">联系我们</a>
+					</li>
+					<li class="ebox-i ebox-02">
+						<h4>模板制作</h4>
+						<p>仿站/模板定制/单页面定制/效果图转模板</p> <a class="btn btn-default btn-sm" rel="nofollow" target="_blank"
+							href="javascript:if(confirm('http://wpa.qq.com/msgrd?v=3&uin=744355891&site=qq&menu=yes  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://wpa.qq.com/msgrd?v=3&uin=744355891&site=qq&menu=yes'">联系我们</a>
+					</li>
+					<li class="ebox-i ebox-03">
+						<h4>CSS布局调整</h4>
+						<p>在您现有模板的基础上 重新修改排版布局</p> <a class="btn btn-default btn-sm" rel="nofollow" target="_blank"
+							href="javascript:if(confirm('http://wpa.qq.com/msgrd?v=3&uin=744355891&site=qq&menu=yes  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://wpa.qq.com/msgrd?v=3&uin=744355891&site=qq&menu=yes'">联系我们</a>
+					</li>
+					<li class="ebox-i ebox-04">
+						<h4>其他技术问题解决</h4>
+						<p>助您解决建站过程中所遇到的各种疑难杂症</p> <a class="btn btn-default btn-sm" rel="nofollow" target="_blank"
+							href="javascript:if(confirm('http://wpa.qq.com/msgrd?v=3&uin=744355891&site=qq&menu=yes  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://wpa.qq.com/msgrd?v=3&uin=744355891&site=qq&menu=yes'">联系我们</a>
+					</li>
+					<li class="ebox-i ebox-05 ebox-100">
+						<h4>定制开发流程</h4>
+						<p> 业务咨询 | 提交需求 | 开始实施 | 确认完成 | 售后服务 </p> <a class="btn btn-default btn-sm" rel="nofollow"
+							target="_blank"
+							href="javascript:if(confirm('http://wpa.qq.com/msgrd?v=3&uin=744355891&site=qq&menu=yes  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://wpa.qq.com/msgrd?v=3&uin=744355891&site=qq&menu=yes'">联系我们</a>
+					</li>
+				</ul>
+
+
+			</div>
+
+
+
+
+
+			<div class="widget widget-tie divTags">
+
+				<h3>标签列表</h3>
+
+
+				<ul>
+					<li><a href="tag/zblog博客主题.htm">zblog博客主题<span class="tag-count"> (5)</span></a></li>
+					<li><a href="tag/zblog教程.htm">zblog教程<span class="tag-count"> (18)</span></a></li>
+					<li><a href="tag/zblog入门.htm">zblog入门<span class="tag-count"> (8)</span></a></li>
+					<li><a href="tag/zblog主题.htm">zblog主题<span class="tag-count"> (13)</span></a></li>
+					<li><a href="tag/zblog模板.htm">zblog模板<span class="tag-count"> (10)</span></a></li>
+					<li><a href="tag/博客主题.htm">博客主题<span class="tag-count"> (4)</span></a></li>
+					<li><a href="tag/资源分享.htm">资源分享<span class="tag-count"> (4)</span></a></li>
+					<li><a href="tag/zblog响应式主题.htm">zblog响应式主题<span class="tag-count"> (6)</span></a></li>
+					<li><a href="tag/CMS主题.htm">CMS主题<span class="tag-count"> (3)</span></a></li>
+					<li><a href="tag/zblog免费主题.htm">zblog免费主题<span class="tag-count"> (4)</span></a></li>
+					<li><a href="tag/免费主题.htm">免费主题<span class="tag-count"> (3)</span></a></li>
+					<li><a href="tag/淘宝客模板.htm">淘宝客模板<span class="tag-count"> (3)</span></a></li>
+					<li><a href="tag/zblog模板修改.htm">zblog模板修改<span class="tag-count"> (7)</span></a></li>
+					<li><a href="tag/加载动画.htm">加载动画<span class="tag-count"> (2)</span></a></li>
+					<li><a href="tag/自适应模板.htm">自适应模板<span class="tag-count"> (2)</span></a></li>
+					<li><a href="tag/zblog插件.htm">zblog插件<span class="tag-count"> (9)</span></a></li>
+					<li><a href="tag/主题制作教程.htm">主题制作教程<span class="tag-count"> (2)</span></a></li>
+					<li><a href="tag/Z-Blog更新.htm">Z-Blog更新<span class="tag-count"> (2)</span></a></li>
+					<li><a href="tag/自媒体主题.htm">自媒体主题<span class="tag-count"> (3)</span></a></li>
+					<li><a href="tag/ZBlog模板-1.htm">ZBlog模板<span class="tag-count"> (3)</span></a></li>
+					<li><a href="tag/建站教程.htm">建站教程<span class="tag-count"> (4)</span></a></li>
+					<li><a href="tag/基础教程.htm">基础教程<span class="tag-count"> (3)</span></a></li>
+					<li><a href="tag/程序员.htm">程序员<span class="tag-count"> (7)</span></a></li>
+					<li><a href="tag/ZBlog插件-1.htm">ZBlog插件<span class="tag-count"> (18)</span></a></li>
+					<li><a href="tag/ZBlog教程-1.htm">ZBlog教程<span class="tag-count"> (6)</span></a></li>
+				</ul>
+
+
+			</div>
+
+
+
+
+
+			<div class="widget widget-tie divComments">
+
+				<h3>最新留言</h3>
+
+
+				<ul>
+					<li><span><img class="avatar avatar-55" alt="EM菌种"
+								src="../cdn.v2ex.com/gravatar/656ab4e6c6ead17abe909ae2cfa7d9e9.png-s=60&r=G" width="55"
+								height="55"></span><a rel="nofollow" href="1424.html#cmt1413"
+							title="发表在  老用户参与阿里云双11拼团大促的方法  上的评论"><span>EM菌种：</span>双十一活动看起来还挺划算的，为什么你这博客不更新了，这是去年双11？</a>
+					</li>
+					<li><span><img class="avatar avatar-55" alt="大事记"
+								src="../cdn.v2ex.com/gravatar/275d30ba218acb46a6666ce185dc88a5.png-s=60&r=G" width="55"
+								height="55"></span><a rel="nofollow" href="1424.html#cmt1411"
+							title="发表在  老用户参与阿里云双11拼团大促的方法  上的评论"><span>大事记：</span>今年估计又会来一波优惠，阿里的力度还是挺大的</a></li>
+					<li><span><img class="avatar avatar-55" alt="胖蟹"
+								src="../cdn.v2ex.com/gravatar/742105bd7bacbec1180d52c6b9d4a7f1.png-s=60&r=G" width="55"
+								height="55"></span><a rel="nofollow" href="243.html#cmt1407"
+							title="发表在  WordPress发表文章时间显示XX天前  上的评论"><span>胖蟹：</span>你还研究这玩意！！！！？？？？</a></li>
+					<li><span><img class="avatar avatar-55" alt="123"
+								src="../cdn.v2ex.com/gravatar/487f87505f619bf9ea08f26bb34f8118.png-s=60&r=G" width="55"
+								height="55"></span><a rel="nofollow" href="1414.html#cmt1406"
+							title="发表在  ZBlog导入数据库提示unknown character set 'utf8mb4'的原因及解决方案  上的评论"><span>123：</span>不错</a>
+					</li>
+					<li><span><img class="avatar avatar-55" alt="昕盟科技"
+								src="../cdn.v2ex.com/gravatar/d0d6999668fa16fd87f675a9c62c1e4d.png-s=60&r=G" width="55"
+								height="55"></span><a rel="nofollow" href="259.html#cmt1405"
+							title="发表在  zblogphp 采集插件tt_caiji发布  上的评论"><span>昕盟科技：</span>在哪下载？</a></li>
+					<li><span><img class="avatar avatar-55" alt="充电桩检测"
+								src="../cdn.v2ex.com/gravatar/8edbfa095476dcd618fc6d676e2ec36e.png-s=60&r=G" width="55"
+								height="55"></span><a rel="nofollow" href="1424.html#cmt1404"
+							title="发表在  老用户参与阿里云双11拼团大促的方法  上的评论"><span>充电桩检测：</span>又到了一年双十一，剁手</a></li>
+					<li><span><img class="avatar avatar-55" alt="励志说说"
+								src="../cdn.v2ex.com/gravatar/d9eaf6dce459c50cddf84caa75894bc6.png-s=60&r=G" width="55"
+								height="55"></span><a rel="nofollow" href="1424.html#cmt1402"
+							title="发表在  老用户参与阿里云双11拼团大促的方法  上的评论"><span>励志说说：</span>我也快到期了，续费的也可以吗？</a></li>
+					<li><span><img class="avatar avatar-55" alt="用户"
+								src="../cdn.v2ex.com/gravatar/7b4e15d013846c21eef7646bf349e7ce.png-s=60&r=G" width="55"
+								height="55"></span><a rel="nofollow" href="1327.html#cmt1401"
+							title="发表在  ZBlog响应式模板-FY_ZMT自媒体主题  上的评论"><span>用户：</span>老板，能加字体不？，没字体写文章都心嘘嘘的</a></li>
+					<li><span><img class="avatar avatar-55" alt="神木木"
+								src="../cdn.v2ex.com/gravatar/925dceec542b1df3b4134890bcebe54c.png-s=60&r=G" width="55"
+								height="55"></span><a rel="nofollow" href="1397.html#cmt1400"
+							title="发表在  ZBlog插件 - 支付宝支付购买  上的评论"><span>神木木：</span>支持1.5么？</a></li>
+					<li><span><img class="avatar avatar-55" alt="薅羊毛网"
+								src="../cdn.v2ex.com/gravatar/21b673e5fb177d508a01ce10f696d1d7.png-s=60&r=G.jpg"
+								width="55" height="55"></span><a rel="nofollow" href="1326.html#cmt1380"
+							title="发表在  ZBlog备份、恢复与搬家（换空间）方法  上的评论"><span>薅羊毛网：</span>必须支持 要不然搞不定</a></li>
+				</ul>
+
+
+			</div>
+
+
+			<div id="module" class="following">
+
+
+
+				<div class="widget widget-tie host">
+
+
+					<ul>
+						<li><a rel="nofollow" target="_blank"
+								href="javascript:if(confirm('http://host.fengyan.cc/aff.php?aff=2  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://host.fengyan.cc/aff.php?aff=2'"><img
+									src="zb_users/upload/2019/02/20190226123347155115562770972.png" /></a></li>
+					</ul>
+
+
+				</div>
+
+
+			</div>
+		</div>
+
+	</div>
+
+	<footer class="footer">
+		<p>© 2017 <a href="index.htm">烽烟博客</a>&nbsp;Powered By <a
+				href="javascript:if(confirm('http://www.zblogcn.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.zblogcn.com/'"
+				title="RainbowSoft Z-BlogPHP" target="_blank">Z-BlogPHP</a>&nbsp;Theme By <a href="index.htm"
+				title="烽烟工作室" target="_blank">FengYan</a>&nbsp;
+			<script>
+				var _hmt = _hmt || [];
+				(function () {
+					var hm = document.createElement("script");
+					hm.src = "../hm.baidu.com/hm.js-c4716c51942335b1c92e3dc2b1ecb2cd"/*tpa=https://hm.baidu.com/hm.js?c4716c51942335b1c92e3dc2b1ecb2cd*/;
+					var s = document.getElementsByTagName("script")[0];
+					s.parentNode.insertBefore(hm, s);
+				})();
+			</script>
+		</p>
+	</footer>
+	<div id="gotop">
+		<span id="gttop" onclick="return false;" title="返回顶部">
+			<i class="fa fa-arrow-up"></i>
+		</span>
+	</div>
+	<script src="zb_users/theme/FY_CIYAW/style/js/functions.js"></script>
+	<script src="zb_users/theme/FY_CIYAW/style/js/blazy.min.js"></script>
+	<script type="text/javascript">
+		// (function () {
+
+		// 	var bLazy = new Blazy({
+		// 		breakpoints: [{
+
+		// 		}]
+		// 		, success: function (element) {
+		// 			setTimeout(function () {
+		// 				var parent = element.parentNode;
+		// 				parent.className = parent.className.replace(/\bloading\b/, '');
+		// 			}, 200);
+		// 		}
+		// 	});
+		// })();
+
+	</script>
+	<script src="zb_users/plugin/FY_Prettify/prettify.js" type="text/javascript"></script>
+	<script language="javascript"></script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<div class="widget widget-tie fy_weibo">
+    <ul>
+        <div id="weiboShow">
+            <% if(login){ %>
+            <div class="grid-weibo-show shadow-hover">
+                <header>&nbsp;</header>
+                <div class="contentt">
+                    <div class="avatar"> <img
+                            src="zb_users/upload/2017/09/20170921094959150595859962603.jpg">
+                        <span class="rank"></span> </div>
+                    <h4><%=username%></h4>
+                    <p class="seta">君子力学,昼夜不息也</p> 
+                    <a class="u-btn-submit f-tdn" rel="nofollow"
+                        href="\addcontent">发表文章 </a>
+                    <a class="u-btn-submit f-tdn" rel="nofollow"
+                        href="\clear">退出登录 </a>
+                </div>
+                <footer>
+                    <ul>
+                        <li><strong>161</strong><span>文章</span></li>
+                        <li><strong>688</strong><span>评论</span></li>
+                        <li><strong>886315</strong><span>浏览</span></li>
+                    </ul>
+                </footer>
+            </div>
+            <% }else{ %>
+            <div class="grid-weibo-show shadow-hover">
+                <div class="contentt">
+                    <form action="/login" method="post">
+                        <p class="seta">
+                            <input type="text" class="text" name="username" placeholder="用户名">
+                        </p> 
+                        <p class="seta f-tdn">
+                            <input type="password" class="text" name="password" placeholder="密码">
+                        </p> 
+                        <button class="u-btn-submit f-tdn" type="submit" >登录功能 </button>
+                        <button class="u-btn-submit f-tdn" type="button" >前往注册 </button>
+                        
+                    </form>
+                </div>
+            </div>
+            
+            <div class="grid-weibo-show shadow-hover">
+                <div class="contentt">
+                    <form action="/register" method="POST">
+                        <p class="seta">
+                            <input type="text" class="text" name="username" placeholder="用户名">
+                        </p> 
+                        <p class="seta f-tdn">
+                            <input type="password" class="text" name="password" placeholder="密码">
+                        </p> 
+                        <p class="seta f-tdn">
+                            <input type="password" class="text" name="password2" placeholder="验证密码">
+                        </p> 
+                        <button class="u-btn-submit f-tdn" type="submit" >注册功能 </button>
+                        <button class="u-btn-submit f-tdn" type="button" >前往登录 </button>
+                        
+                    </form>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </ul>
+
+
+</div>

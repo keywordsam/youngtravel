@@ -1,0 +1,70 @@
+<%- include("./public/header.html")%>
+<%- include("./public/headerNav.html")%>
+<div class="container">
+    <div class="content-wrap">
+        <div class="content">
+            <div id="comments" class="mkcomments animation">
+                <div class="title">
+                    <h2>发表评论</h2>
+                </div>
+                <form action="/addcontent" method="post">
+                    <p>
+                        <h3>标题</h3>
+                        <input type="text" name="title">
+                    </p>
+                    <p>
+                        <h3>分类</h3>
+                        <select name="category" id="">
+                            <% for(var i = 0; i < category.length;i++){ %>
+                            <option value="<%=category[i]._id%>"><%=category[i].name%></option>
+                            <% } %>
+                        </select>
+                    </p>
+                    <p>
+                        <h3>介绍</h3>
+                        <textarea name="description" id="" cols="30" rows="10"></textarea>
+                    </p>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">缩略图</label>
+
+                        <div class="col-sm-10">
+                            <input type="file" class="thumbnail">
+                            <input type="hidden" name="thumbnail">
+                            <img style="width:100px;height:100px;" src="" alt="">
+                        </div>
+                    </div>
+                    <p>
+                        <input type="submit" value="发表">
+                    </p>
+                 
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <%- include("./login.html")%>
+    </div>
+</div>
+<%- include("./public/footer.html")%>
+
+<script>
+    // 缩略图上传
+    $(".thumbnail").change(function () {
+        // 获取图片对象
+        var file = $(this)[0]; //jq=>js
+        var formdata = new FormData(); //实例化表单对象
+        formdata.append("file", file.files[0]); //键值对 把图片整个对象上传服务器
+        var _this = $(this);
+        $.ajax({
+            url: "/upload",
+            type: "post",
+            cache: false,
+            data: formdata,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                _this.next().val(data.file).next().attr("src", data.file);
+            }
+        })
+    })
+</script>

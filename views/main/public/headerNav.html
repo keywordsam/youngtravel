@@ -1,0 +1,24 @@
+<header class="header">
+    <div class="container">
+
+        <h1 class="logo">
+            <a href="/" title="青年游记" rel="home"><img src="zb_users/theme/FY_CIYAW/style/images/logo.png">青年游记</a>
+        </h1>
+        <menu id="monavber" class="right" data-type="index">
+            <ul class="navbar">
+                <li id="nvabar-item-index" class="active">
+                    <a href="/">首页</a>
+                </li>
+                <% for(var i = 0; i < category.length;i++){ %>
+                <li id="nvabar-item-index">
+                    <a href="/?category=<%=category[i]._id%>"><%=category[i].name%></a>
+                </li>
+                <% } %>
+            </ul>
+        </menu>
+        <a class="moble-bars" id="btn-bars"><i class="fa fa-bars"></i></a>
+    </div>
+</header>
+<div class="breadcrumb">
+    <i class="fa fa-bullhorn"></i>旅游交流微信（octw0508）
+</div>

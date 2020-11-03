@@ -1,0 +1,61 @@
+<%- include("./public/header.html")%>
+<%- include("./public/headerNav.html")%>
+
+<div class="container bodyIndex">
+	<div class="content-wrap">
+		<div class="content">
+			<div class="excerpts">
+				<% for(var i =0 ;i <result.length;i++){ %>
+				<article class="post" data-id="1424">
+					<header>
+						<h2><a href="/details?id=<%=result[i]._id%>"><%=result[i].title%></a></h2>
+					</header>
+					<div class="post-img loading">
+						<a class="pic float-left" href="/details?id=<%=result[i]._id%>">
+							<img class="b-lazy" src="<%=result[i].thumbnail%>" />
+						</a>
+					</div>
+					<div class="post-text">
+						<%=result[i].description%>
+					</div>
+					<footer>
+						<span>
+							<i class="fa fa-clock-o fa-fw"></i>
+							<%=result[i].addTime%>
+						</span>
+						<span><i class="fa fa-eye fa-fw"></i><%=result[i].address%></span>
+						<span><i class="fa fa-comment-o fa-fw"></i>12</span>
+					</footer>
+				</article>
+				<% } %>
+			</div>
+
+
+
+
+
+			<div class="pagination">
+				<ul>
+					<li class="active"><span>1</span></li>
+					<li><a href="page/2.html" title="2">2</a></li>
+					<li><a href="page/3.html" title="3">3</a></li>
+					<li><a href="page/4.html" title="4">4</a></li>
+					<li><a href="page/5.html" title="5">5</a></li>
+					<li><a href="page/2.html" title="›">下一页</a></li>
+					<li><a href="page/18.html" title="尾页 »">尾页 »</a></li>
+					<li><span>共 18 页</span></li>
+				</ul>
+			</div>
+
+
+		</div>
+	</div>
+	<div class="sidebar">
+		<%- include("./login.html")%>
+		<%- include( "./public/available.html")%>
+		<%- include( "./public/divTags.html")%>
+		<%- include( "./public/following.html")%>
+	</div>
+</div>
+
+<%- include( "./public/footer.html")%>
